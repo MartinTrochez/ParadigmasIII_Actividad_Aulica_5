@@ -1,0 +1,110 @@
+:root{
+    --color-header: black;
+    --color-menu: red;
+    --color-hero: cyan;
+    --color-main: blue;
+    --color-banner: yellow;
+    --color-extra: green;
+    --color-image: grey;
+}
+
+html {
+    height: 100%;
+}
+
+body,
+div {
+    margin: 0;
+}
+
+.contenedor-grid {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    gap: 0;
+    text-align: center;
+    justify-content: 100%;
+    grid-template-areas: 
+        "header" 
+        "menu"      
+        "hero"   
+        "main"   
+        "banner" 
+        "extra"  
+        "image"; 
+    grid-template-rows: 7.5% 7.5% 20% 20% 15% 15% 15%;
+}
+
+.contenedor-menu,
+.contenedor-hero,
+.contenedor-main,
+.contenedor-banner,
+.contenedor-extra,
+.contenedor-image,
+.contenedor-header {
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor-header {
+    grid-area: header;
+    background-color: var(--color-header);
+    color: white;
+    text-align: center;
+}
+
+.contenedor-menu {
+    grid-area: menu;
+    background-color: var(--color-menu);
+
+}
+
+.contenedor-hero {
+    grid-area: hero;
+    background-color: var(--color-hero);
+}
+
+.contenedor-banner {
+    grid-area: banner;
+    background-color: var(--color-banner);
+}
+
+.contenedor-extra {
+    grid-area: extra;
+    background-color: var(--color-extra);
+}
+
+.contenedor-image {
+    grid-area: image;
+    background-color: var(--color-image);
+}
+
+.contenedor-main {
+    grid-area: main;
+    background-color: var(--color-main);
+}
+
+@media (min-width: 768px){
+    .contenedor-grid {
+        grid-template-areas: 
+            "header header header header" 
+            "hero hero hero hero"      
+            "menu main main main"   
+            "menu banner banner banner"   
+            "menu  extra extra image" ;
+        grid-template-rows: 7.5% 27.5% 35% 15% 15%;
+    }
+}
+
+@media (min-width: 1024px){
+    .contenedor-grid {
+        grid-template-areas: 
+            "header menu menu menu" 
+            "hero hero hero hero"      
+            "main main auto image"   
+            "main main auto extra"   
+            "banner banner banner banner" ;
+        grid-template-rows: 7.5% 47.5% 15% 15% 15%;
+    }
+}
